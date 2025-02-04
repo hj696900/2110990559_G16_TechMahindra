@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    gap: 13rem;
+    height: 10vh;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    padding: 1rem;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+}
+
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 9px 20px;
+    font-size: 16px;
+    border: none;
+    width: 160px;
+    height: 40px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 1px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+  #bb{
+    position: relative;
+    color: black;
+    font-size: 16px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 9px 20px;
+    width: 160px;
+    height: 40px;
+    overflow: hidden;
+    border: 2px solid black;
+
+
+}
+
+#line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: black;
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+#bb span {
+    position: relative;
+    z-index: 2; /* Place the text above the line */
+    transition: color 0.5s ease; /* Smooth text color change */
+}
+
+#bb:hover #line {
+    width: 100%; /* Expands to fill the button width */
+}
+
+#bb:hover {
+    color: white; /* Changes text color to white */
+}
+
+
+.body-container{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+}
+#phone{
+    height: 30rem;
+    width: 30rem;
+}
+
+#laptop{
+    height: 30rem;
+    width: 30rem;
+}
+
+.item1{
+    display: flex;
+    flex-direction: row;
+}
+.item2{
+    display: flex;
+    flex-direction: row;
+}
+
+#para1{
+    margin-top: 5rem;
+}
