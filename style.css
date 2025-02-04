@@ -8,7 +8,7 @@
     flex-direction: row;
     gap: 13rem;
     height: 10vh;
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background-color: rgb(0, 0, 0);
     padding: 1rem;
 }
 
@@ -16,6 +16,8 @@
     display: flex;
     flex-direction: row;
     gap: 12rem;
+    margin-left: 8rem;
+
 }
 
 
@@ -57,7 +59,67 @@
   
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+.glow-on-hover {
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    padding: 9px 20px;
+    font-size: 16px;
+    border: none;
+    width: 160px;
+    height: 40px;
+}
 
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 
   #bb{
     position: relative;
@@ -68,7 +130,7 @@
     width: 160px;
     height: 40px;
     overflow: hidden;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
 
 
 }
@@ -102,16 +164,40 @@
 .body-container{
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+    background-color: #130f40;
+background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
 }
 #phone{
     height: 30rem;
     width: 30rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#phone:hover{
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 #laptop{
     height: 30rem;
     width: 30rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#laptop:hover{
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+#headphone{
+    height: 30rem;
+    width: 30rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#headphone:hover{
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 .item1{
@@ -122,7 +208,23 @@
     display: flex;
     flex-direction: row;
 }
+.item3{
+    display: flex;
+    flex-direction: row;
+}
 
 #para1{
     margin-top: 5rem;
+    padding: 1rem;
+    color: rgb(215, 215, 215);
+}
+#para2{
+    margin-top: 5rem;
+    padding: 1rem;
+    color: rgb(215, 215, 215);
+}
+#para3{
+    margin-top: 5rem;
+    padding: 1rem;
+    color: rgb(215, 215, 215);
 }
