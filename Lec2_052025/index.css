@@ -22,12 +22,11 @@
 }
 
 .navbar{
-    box-shadow: 0px 5px 10px 0px #aaa;
     /* position: fixed; */
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background-color:rgb(0, 0, 0);
     color: #ffffff;
-    opacity: 0.85;
+    opacity: 2;
     z-index: 100;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -43,15 +42,42 @@
     order: 2;
     display: flex;
 }
-.logo{
-    order: 1;
-    font-size: 2.3rem;
-    font-family: "Merienda", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
+
+.btn-shine {
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: linear-gradient(to right, #9f9f9f 0, #fff 5%, #868686 10%);
+    background-size: 200%; /* Make sure we have enough room for movement */
+    background-position: 0 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s infinite linear; /* Extended duration to accommodate the pause */
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-left: 10.6rem;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* Keyframes with pause after 'o' */
+@keyframes shine {
+    0% {
+        background-position: 100%; /* Start from the left */
+    }
+    60% {
+        background-position: -100%; /* Move across to the end of 'Portfolio' */
+    }
+    70% {
+        background-position: 20%; /* Pause after 'o' */
+    }
+    100% {
+        background-position: -100%; /* Reset to start from 'M' */
+    }
+}
+
+
+  
 .menu-items li{
     list-style: none;
     margin-left: 1.5rem;
@@ -189,9 +215,25 @@
 /*BODY CONTAINER CSS*/
 .body-container{
     /* border: 2px solid red; */
+    position: relative;
     padding: 1rem;
     height: 91vh;
-    background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+    /* background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%); */
+    /* background-image: url(images/dark2); */
+}
+.body-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/dark3);
+    background-size: cover; /* Adjust based on your needs */
+    background-position: center;
+    opacity: 1; /* Adjust this value for the desired transparency */
+    height: 91.5vh;
+    z-index: -1; /* Places the image behind the content */
 }
 
 .myprofile-container{
@@ -211,6 +253,7 @@
 
 .p1-desc-container{
     font-size: 4rem;
+    color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -219,16 +262,18 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex; /* Ensure both texts stay on the same line */
     align-items: center;
+    color: white;
 }
 
+/*Harsh Jain animation*/
 .my-name {
     display: inline-block; /* Enables the width animation */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #006600; 
- background-image: linear-gradient(45deg, #006600 3%, #008000 63%, #339933 65%, #66CC66 81%); 
+ background-image: linear-gradient(45deg, #006600 9%, #008000 2%, #339933 35%, #66CC66 60%); 
  background-clip: text; 
  -webkit-background-clip: text; 
- -webkit-text-fill-color: transparent; 
+ -webkit-text-fill-color: transparent;
     overflow: hidden; /* Hide text until it's typed */
     border-right: .05em solid orange; /* The blinking cursor */
     white-space: nowrap; /* Keep text in one line */
@@ -252,25 +297,80 @@
 }
 
 
+
 .p3-desc-container{
     font-size: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #A9BCF5; 
+    background-image: linear-gradient(45deg, #A9BCF5 49%, #89ABE3 56%, #6D82D1 69%, #5359BF 91%, #3A30A8 4%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
 }
 
-
-
 .profile-img-container{
-    /* border: 1px solid purple; */
-    width: 35%;
+    width: 30rem;
+    height: 30rem;
     overflow: hidden;
+    border-radius: 50%;
 }
 
 #img-batman{
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
-    margin-left: 1.4rem;
-    margin-top: 1rem;
+    /* margin-left: 1.4rem;
+    margin-top: 1rem; */
+    transition: transform 1.4s;
     
 }
+
+#img-batman:hover{
+    transform: scale(1.2);
+}
+
+.button-container{
+    display: flex;
+    margin-top: 2rem;
+}
+#bb{
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-size: 16px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 9px 20px;
+    width: 160px;
+    height: 40px;
+    overflow: hidden;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5rem;
+    margin-right: 4rem;
+}
+
+#line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+#bb span {
+    position: relative;
+    z-index: 2; /* Place the text above the line */
+    transition: color 0.5s ease; /* Smooth text color change */
+}
+
+#bb:hover #line {
+    width: 100%; /* Expands to fill the button width */
+}
+
+#bb:hover {
+    color: rgb(0, 0, 0); /* Changes text color to white */
+}
+
