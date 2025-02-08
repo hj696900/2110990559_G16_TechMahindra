@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to scroll to a section with an offset (9vh for navbar height)
     function scrollToSection(section) {
-        const offset = window.innerHeight * 0.082; // 9vh in pixels
+        const offset = window.innerHeight * 0.081; // 9vh in pixels
         const sectionTop = section.offsetTop - offset;
         window.scrollTo({ top: sectionTop, behavior: 'smooth' });
     }
