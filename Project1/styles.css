@@ -1,8 +1,21 @@
 *{
     margin: 0;
-    padding: 0;   
+    padding: 0;  
+    transition: all 0.3s ease-in-out; 
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
 
 .nav-top-container{
     /* border: 2px solid red; */
@@ -10,18 +23,19 @@
     display: flex;
     flex-direction: row;
     padding: 1rem;
+    justify-content: space-between;
 }
 
 .nav-bar-content-left{
     /* border: 2px solid yellow; */
     height: 14vh;
-    width: 50%;
+    width: 19rem
 }
 
 .nav-bar-content-right{
     /* border: 2px solid yellow; */
     height: 14vh;
-    width: 50%;
+    width: 10rem;
 }
 
 #huddle-img{
@@ -33,10 +47,10 @@
     margin-top: 2.9rem;
     border-radius: 20rem;
     font-size: large;
-    padding: 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 25px;
     padding-left: 25px;
-    margin-left: 35rem;
     border: 1px solid #fd53c0;
     background-color: white;
     color: #fd53c0;
@@ -552,6 +566,3 @@
     background-color: white;
     color: #fd53c0;
   }
-
-
- 

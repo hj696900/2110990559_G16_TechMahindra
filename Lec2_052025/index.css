@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+.body{
+    overflow-x: hidden;
+}
+
 .html{
     font-size: 62.5%;
 }
@@ -395,7 +399,7 @@
 background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
 }
 
-#page2-heading{
+.txt{
     margin-top: 1.5rem;
     margin-left: 40rem;
     color: white;
@@ -405,4 +409,76 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
 
 .heading-container{
     border: 2px solid yellow;
+}
+
+/* From Uiverse.io by elijahgummer */ 
+.txt {
+    /* position: relative; */
+    font-family: sans-serif;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-left: 29rem;
+    overflow: hidden;
+    background: linear-gradient(90deg, #fff 10%, #4d4d4d 20%);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*SKILLS SECTION*/
+  .skills-section{
+    height: 91vh;
+    background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
+}
+
+
+
+
+  /*Experience SECTION*/
+  .Experience-section{
+    height: 91vh;
+    background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
 }
