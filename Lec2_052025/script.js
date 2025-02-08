@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectsLink = document.getElementById('projects-link'); // "Projects" link
     const skillsLink = document.querySelector('.menu-items li:nth-child(3) a'); // "Skills" link
     const experienceLink = document.querySelector('.menu-items li:nth-child(4) a'); // "Experience" link
+    const contactLink = document.querySelector('.menu-items li:nth-child(5) a'); // "Contact" link
 
     const homeSection = document.body; // Home section (whole page)
     const projectsSection = document.getElementById('projects'); // Projects section
@@ -14,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const offset = window.innerHeight * 0.0808; // 9vh in pixels
         const sectionTop = section.offsetTop - offset;
         window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+    }
+
+    // Function to scroll to the very end of the page
+    function scrollToEnd() {
+        const endPosition = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo({ top: endPosition, behavior: 'smooth' });
     }
 
     // Function to check scroll position and update active class
@@ -68,6 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         scrollToSection(experienceSection); // Scroll to Experience section with offset
         setActiveLink(experienceLink); // Manually set Experience as active
+    });
+
+    // Click event for "Contact"
+    contactLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        scrollToEnd(); // Scroll to the very end of the page
+        setActiveLink(contactLink); // Manually set Contact as active
     });
 
     // Listen to scroll events
