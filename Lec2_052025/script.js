@@ -100,30 +100,34 @@ document.addEventListener('scroll', function () {
         const documentHeight = document.documentElement.scrollHeight;
         const maxScroll = documentHeight - windowHeight;
 
-        if (maxScroll <= 0) return; // Prevent division by zero
+        if (maxScroll <= 0) return;
 
         const scrollPercent = scrollPosition / maxScroll;
 
-        const startColor = [26, 26, 26]; // #1a1a1a
-        const midColor = [75, 75, 75];  // #4b4b4b
-        const endColor = [0, 0, 0];     // #000000
+        const auroraColors = [
+            [3, 11, 36],    // #030B24 (Darkest Midnight)
+            [6, 43, 77],    // #062B4D (Deep Space Blue)
+            [13, 78, 118],  // #0D4E76 (Frosty Blue)
+            [23, 107, 138], // #176B8A (Icy Aqua)
+            [34, 139, 146], // #228B92 (Muted Teal)
+            [50, 165, 125], // #32A57D (Aurora Green)
+            [94, 175, 95],  // #5EAF5F (Glowing Emerald)
+            [141, 158, 112],// #8D9E70 (Soft Sage)
+            [178, 135, 142],// #B2878E (Muted Rose)
+            [209, 102, 165] // #D166A5 (Pastel Lilac)
+        ];
 
-        let r, g, b;
+        const numColors = auroraColors.length - 1;
+        const step = 1 / numColors;
+        let index = Math.min(Math.floor(scrollPercent / step), numColors - 1);
+        let factor = (scrollPercent - index * step) / step;
 
-        if (scrollPercent < 0.5) {
-            // Interpolating between startColor and midColor
-            const factor = scrollPercent * 2;
-            r = Math.round(startColor[0] + (midColor[0] - startColor[0]) * factor);
-            g = Math.round(startColor[1] + (midColor[1] - startColor[1]) * factor);
-            b = Math.round(startColor[2] + (midColor[2] - startColor[2]) * factor);
-        } else {
-            // Interpolating between midColor and endColor
-            const factor = (scrollPercent - 0.5) * 2;
-            r = Math.round(midColor[0] + (endColor[0] - midColor[0]) * factor);
-            g = Math.round(midColor[1] + (endColor[1] - midColor[1]) * factor);
-            b = Math.round(midColor[2] + (endColor[2] - midColor[2]) * factor);
-        }
+        let r = Math.round(auroraColors[index][0] + (auroraColors[index + 1][0] - auroraColors[index][0]) * factor);
+        let g = Math.round(auroraColors[index][1] + (auroraColors[index + 1][1] - auroraColors[index][1]) * factor);
+        let b = Math.round(auroraColors[index][2] + (auroraColors[index + 1][2] - auroraColors[index][2]) * factor);
 
-        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${endColor[0]}, ${endColor[1]}, ${endColor[2]}) 100%)`;
+        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${auroraColors[numColors][0]}, ${auroraColors[numColors][1]}, ${auroraColors[numColors][2]}) 100%)`;
     });
 });
+
+
