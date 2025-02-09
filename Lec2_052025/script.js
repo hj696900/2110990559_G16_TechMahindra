@@ -90,3 +90,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set initial active link (Home by default)
     setActiveLink(homeLink);
 });
+
+
+document.addEventListener('scroll', function() {
+    const body = document.body;
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPercent = scrollPosition / (documentHeight - windowHeight);
+
+    // Define the gradient colors
+    const startColor = [26, 26, 26]; // #1a1a1a
+    const endColor = [0, 0, 0]; // #000000
+    const midColor = [75, 75, 75]; // #4b4b4b
+
+    // Calculate the intermediate color based on scroll position
+    const r = Math.round(startColor[0] + (midColor[0] - startColor[0]) * scrollPercent);
+    const g = Math.round(startColor[1] + (midColor[1] - startColor[1]) * scrollPercent);
+    const b = Math.round(startColor[2] + (midColor[2] - startColor[2]) * scrollPercent);
+
+    // Set the background gradient
+    body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${endColor[0]}, ${endColor[1]}, ${endColor[2]}) 100%)`;
+});

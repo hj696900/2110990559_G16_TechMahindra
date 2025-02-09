@@ -244,7 +244,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(images/dark3);
+    /* background-image: url(images/dark3); */
     background-size: cover; /* Adjust based on your needs */
     background-position: center;
     opacity: 1; /* Adjust this value for the desired transparency */
@@ -395,8 +395,8 @@
 /*PROJECTS SECTION*/
 .projects-section{
     height: 91vh;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
+    /* background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%); */
 }
 
 .txt{
@@ -469,8 +469,8 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
   /*SKILLS SECTION*/
   .skills-section{
     height: 91vh;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
+    /* background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%); */
 }
 
 
@@ -479,8 +479,8 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
   /*Experience SECTION*/
   .experience-section{
     height: 91vh;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
+    /* background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%); */
 }
 
 
@@ -497,6 +497,25 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
 
 .contact-section{
     height: 25vh;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%);
+    /* background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%); */
+}
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+    color: white;
+    transition: background 0.5s ease;
+}
+
+.body-container, .projects-section, .skills-section, .experience-section,{
+    height: 91vh;
 }
