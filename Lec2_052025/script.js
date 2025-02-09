@@ -104,27 +104,27 @@ document.addEventListener('scroll', function () {
 
         const scrollPercent = scrollPosition / maxScroll;
 
-        const midnightPhantom = [
-            [5, 5, 5],    // #050505 (Pure Black)
-            [18, 18, 18],  // #121212 (Dark Graphite)
-            [35, 35, 35],  // #232323 (Deep Charcoal)
-            [47, 47, 59],  // #2F2F3B (Shadow Indigo)
-            [27, 43, 68],  // #1B2B44 (Steel Sapphire)
-            [16, 44, 60],  // #102C3C (Darkened Teal)
-            [11, 31, 42],  // #0B1F2A (Abyss Blue)
-            [6, 14, 22]    // #060E16 (Final Eclipse)
+        const gradientColors = [
+            [1, 42, 54],   // Deep Dark Blue-Teal 🌊
+            [2, 62, 74],   // Midnight Ocean 🌑
+            [3, 87, 99],   // Abyssal Cyan 💎
+            [6, 75, 88],   // Stormy Teal-Blue 🌫️
+            [15, 62, 77],  // Deep Steel Blue 🏴
+            [28, 42, 54],  // Shadow Black Blue 🌌
+            [18, 23, 29],  // Charcoal Abyss ⚫
+            [10, 11, 13]   // Obsidian Black 🌑
         ];
 
-        const numColors = midnightPhantom.length - 1;
+        const numColors = gradientColors.length - 1;
         const step = 1 / numColors;
         let index = Math.min(Math.floor(scrollPercent / step), numColors - 1);
         let factor = (scrollPercent - index * step) / step;
 
-        let r = Math.round(midnightPhantom[index][0] + (midnightPhantom[index + 1][0] - midnightPhantom[index][0]) * factor);
-        let g = Math.round(midnightPhantom[index][1] + (midnightPhantom[index + 1][1] - midnightPhantom[index][1]) * factor);
-        let b = Math.round(midnightPhantom[index][2] + (midnightPhantom[index + 1][2] - midnightPhantom[index][2]) * factor);
+        let r = Math.round(gradientColors[index][0] + (gradientColors[index + 1][0] - gradientColors[index][0]) * factor);
+        let g = Math.round(gradientColors[index][1] + (gradientColors[index + 1][1] - gradientColors[index][1]) * factor);
+        let b = Math.round(gradientColors[index][2] + (gradientColors[index + 1][2] - gradientColors[index][2]) * factor);
 
-        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${midnightPhantom[numColors][0]}, ${midnightPhantom[numColors][1]}, ${midnightPhantom[numColors][2]}) 100%)`;
+        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${gradientColors[numColors][0]}, ${gradientColors[numColors][1]}, ${gradientColors[numColors][2]}) 100%)`;
     });
 });
 
