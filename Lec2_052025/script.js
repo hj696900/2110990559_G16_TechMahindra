@@ -105,14 +105,14 @@ document.addEventListener('scroll', function () {
         const scrollPercent = scrollPosition / maxScroll;
 
         const gradientColors = [
-            [1, 42, 54],   // Deep Dark Blue-Teal 🌊
-            [2, 62, 74],   // Midnight Ocean 🌑
-            [3, 87, 99],   // Abyssal Cyan 💎
-            [6, 75, 88],   // Stormy Teal-Blue 🌫️
-            [15, 62, 77],  // Deep Steel Blue 🏴
-            [28, 42, 54],  // Shadow Black Blue 🌌
-            [18, 23, 29],  // Charcoal Abyss ⚫
-            [10, 11, 13]   // Obsidian Black 🌑
+            [0, 22, 36],   // Deepest Dark Blue-Teal 🌊
+            [0, 40, 58],   // Shadow Abyss Blue 🌑
+            [1, 68, 86],   // Midnight Teal 💎
+            [2, 96, 110],  // Stormy Dark Cyan 🌫️
+            [12, 79, 96],  // Muted Steel Blue 🏴
+            [28, 53, 64],  // Shadow Navy 🌌
+            [18, 25, 32],  // Charcoal Abyss ⚫
+            [8, 10, 13]    // Deep Obsidian 🌑
         ];
 
         const numColors = gradientColors.length - 1;
