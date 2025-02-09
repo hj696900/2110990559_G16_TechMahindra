@@ -104,29 +104,27 @@ document.addEventListener('scroll', function () {
 
         const scrollPercent = scrollPosition / maxScroll;
 
-        const auroraColors = [
-            [3, 11, 36],    // #030B24 (Darkest Midnight)
-            [6, 43, 77],    // #062B4D (Deep Space Blue)
-            [13, 78, 118],  // #0D4E76 (Frosty Blue)
-            [23, 107, 138], // #176B8A (Icy Aqua)
-            [34, 139, 146], // #228B92 (Muted Teal)
-            [50, 165, 125], // #32A57D (Aurora Green)
-            [94, 175, 95],  // #5EAF5F (Glowing Emerald)
-            [141, 158, 112],// #8D9E70 (Soft Sage)
-            [178, 135, 142],// #B2878E (Muted Rose)
-            [209, 102, 165] // #D166A5 (Pastel Lilac)
+        const eclipseNoir = [
+            [8, 8, 8],   // #080808 (True Black)
+            [20, 20, 20], // #141414 (Obsidian)
+            [37, 37, 37], // #252525 (Dark Gray)
+            [59, 59, 59], // #3B3B3B (Graphite Gray)
+            [30, 42, 64], // #1E2A40 (Midnight Blue)
+            [22, 51, 85], // #163355 (Deep Navy)
+            [15, 66, 101],// #0F4265 (Steel Blue)
+            [0, 85, 127]  // #00557F (Cool Teal)
         ];
 
-        const numColors = auroraColors.length - 1;
+        const numColors = eclipseNoir.length - 1;
         const step = 1 / numColors;
         let index = Math.min(Math.floor(scrollPercent / step), numColors - 1);
         let factor = (scrollPercent - index * step) / step;
 
-        let r = Math.round(auroraColors[index][0] + (auroraColors[index + 1][0] - auroraColors[index][0]) * factor);
-        let g = Math.round(auroraColors[index][1] + (auroraColors[index + 1][1] - auroraColors[index][1]) * factor);
-        let b = Math.round(auroraColors[index][2] + (auroraColors[index + 1][2] - auroraColors[index][2]) * factor);
+        let r = Math.round(eclipseNoir[index][0] + (eclipseNoir[index + 1][0] - eclipseNoir[index][0]) * factor);
+        let g = Math.round(eclipseNoir[index][1] + (eclipseNoir[index + 1][1] - eclipseNoir[index][1]) * factor);
+        let b = Math.round(eclipseNoir[index][2] + (eclipseNoir[index + 1][2] - eclipseNoir[index][2]) * factor);
 
-        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${auroraColors[numColors][0]}, ${auroraColors[numColors][1]}, ${auroraColors[numColors][2]}) 100%)`;
+        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${eclipseNoir[numColors][0]}, ${eclipseNoir[numColors][1]}, ${eclipseNoir[numColors][2]}) 100%)`;
     });
 });
 
