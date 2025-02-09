@@ -513,9 +513,9 @@ body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
     color: white;
-    transition: background 0.5s ease;
+    /* transition: background 0.5s ease; */
 }
 
-.body-container, .projects-section, .skills-section, .experience-section,{
-    height: 91vh;
+.body-container, .projects-section, .skills-section, .experience-section{
+    min-height: 91vh;
 }

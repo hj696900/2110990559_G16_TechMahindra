@@ -92,23 +92,38 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('scroll', function() {
-    const body = document.body;
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollPercent = scrollPosition / (documentHeight - windowHeight);
+document.addEventListener('scroll', function () {
+    requestAnimationFrame(() => {
+        const body = document.body;
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const maxScroll = documentHeight - windowHeight;
 
-    // Define the gradient colors
-    const startColor = [26, 26, 26]; // #1a1a1a
-    const endColor = [0, 0, 0]; // #000000
-    const midColor = [75, 75, 75]; // #4b4b4b
+        if (maxScroll <= 0) return; // Prevent division by zero
 
-    // Calculate the intermediate color based on scroll position
-    const r = Math.round(startColor[0] + (midColor[0] - startColor[0]) * scrollPercent);
-    const g = Math.round(startColor[1] + (midColor[1] - startColor[1]) * scrollPercent);
-    const b = Math.round(startColor[2] + (midColor[2] - startColor[2]) * scrollPercent);
+        const scrollPercent = scrollPosition / maxScroll;
 
-    // Set the background gradient
-    body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${endColor[0]}, ${endColor[1]}, ${endColor[2]}) 100%)`;
+        const startColor = [26, 26, 26]; // #1a1a1a
+        const midColor = [75, 75, 75];  // #4b4b4b
+        const endColor = [0, 0, 0];     // #000000
+
+        let r, g, b;
+
+        if (scrollPercent < 0.5) {
+            // Interpolating between startColor and midColor
+            const factor = scrollPercent * 2;
+            r = Math.round(startColor[0] + (midColor[0] - startColor[0]) * factor);
+            g = Math.round(startColor[1] + (midColor[1] - startColor[1]) * factor);
+            b = Math.round(startColor[2] + (midColor[2] - startColor[2]) * factor);
+        } else {
+            // Interpolating between midColor and endColor
+            const factor = (scrollPercent - 0.5) * 2;
+            r = Math.round(midColor[0] + (endColor[0] - midColor[0]) * factor);
+            g = Math.round(midColor[1] + (endColor[1] - midColor[1]) * factor);
+            b = Math.round(midColor[2] + (endColor[2] - midColor[2]) * factor);
+        }
+
+        body.style.background = `linear-gradient(180deg, rgb(${r}, ${g}, ${b}) 0%, rgb(${endColor[0]}, ${endColor[1]}, ${endColor[2]}) 100%)`;
+    });
 });
