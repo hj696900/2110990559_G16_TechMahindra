@@ -129,3 +129,38 @@ document.addEventListener('scroll', function () {
 });
 
 
+
+
+
+
+//Typing effect js
+const textElement = document.getElementById("text");
+        const words = textElement.getAttribute("data-words").split(",");
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+
+            if (!isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000); // Wait before erasing
+                    return;
+                }
+            } else {
+                textElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+            setTimeout(typeEffect, isDeleting ? 100 : 150);
+        }
+
+        typeEffect();
+
