@@ -435,7 +435,8 @@
     height: 91vh;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
+    overflow-x: hidden;
     /* background: rgb(0,0,0);
 background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%); */
 }
@@ -451,7 +452,27 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
 .heading-container{
     border: 1px solid yellow;
     height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+#creat--{
+    color: #A9BCF5; 
+ background-image: linear-gradient(45deg, #A9BCF5 17%, #89ABE3 54%, #6D82D1 97%, #5359BF 14%, #3A30A8 80%); 
+ background-clip: text; 
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ font-size: 3.5rem;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+
+
 
 /* From Uiverse.io by elijahgummer */ 
 .txt {
@@ -549,19 +570,24 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
     display: flex;
     flex-direction: row;
     gap: 5.5rem;
+    border: 1px solid yellow;
     justify-content: center;
+    /* align-items: center; */
 }   
 .card {
     position: relative;
     /* width: 190px;
     height: 254px; */
-    width: 256px;
-    height: 320px;
+    width: 286px;
+    height: 350px;
     background-color: #000;
     display: flex;
     flex-direction: column;
     justify-content: end;
-    padding: 12px;
+    /* padding: 12px; */
+    /* padding-left: 12px; */
+    padding-bottom: 12px;
+    padding-top: 0px;
     gap: 19px;
     border-radius: 8px;
     cursor: pointer;
@@ -573,8 +599,8 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
     inset: 0;
     left: -5px;
     margin: auto;
-    width: 266px;
-    height: 330px;
+    width: 296px;
+    height: 360px;
     border-radius: 10px;
     background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
     z-index: -10;
@@ -594,10 +620,11 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
   
   .heading {
     font-size: 23px;
+    margin-left: 12px;
     text-transform: capitalize;
     /* color: #e81cff; */
     color: #006600; 
- background-image: linear-gradient(270deg, #006600 0%, #008000 0%, #339933 0%, #66CC66 55%); 
+ background-image: linear-gradient(270deg, #006600 0%, #008000 0%, #339933 0%, #66CC66 21%); 
  background-clip: text; 
  -webkit-background-clip: text; 
  -webkit-text-fill-color: transparent; 
@@ -606,6 +633,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
   
   .card p:not(.heading) {
     font-size: 14px;
+    margin-left: 13px;
   }
   
   .card p:last-child {
@@ -618,57 +646,59 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
   }
   
   .card:hover::before {
-    transform: rotate(-90deg) scaleX(1.24) scaleY(0.8);
+    transform: rotate(-90deg) scaleX(1.22) scaleY(0.82);
   }
 
+  /*1.24   0.8*/
   .proj-img-container{
-    height:23vh;
+    height:24.5vh;
+    width: 100%;
     overflow: hidden;
-    /* border: 1px solid yellow; */
+    /* border: 1px solid rgb(255, 255, 255); */
+    margin: 0;
+    padding: 0;
   }
 
   #taskedinimg{
-   top: 0;
-   width: 15vw;
-   height: 20vh;
+   width: 140%;
+   height: 90%;
    transition: all 0.3s;
+   left: 0;
   }
 
   #taskedinimg:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
 
   #studysyncimg{
-    top: 0;
-    width: 15vw;
-    height: 20vh;
+    
+    width: 122%;
+    height: 100%;
     transition: all 0.3s;
    }
  
    #studysyncimg:hover{
-     transform: scale(1.1);
+     transform: scale(1.05);
    }
 
 
    #loadingimg{
-    width: 16rem;
-    height: 9rem;
+    width: 90%;
+    height: 90%;
     align-self: center;
     transition: all 0.3s;
    }
  
    #loadingimg:hover{
-     transform: scale(1.2);
+     transform: scale(1.05);
    }
 
 
    #audiospaceimg{
-    top: 0;
-    width: 15vw;
-    height: 20vh;
+    width: 140%;
+    height: 100%;
     transition: all 0.3s;
-    scale: 1.1;
    }
  
    #audiospaceimg:hover{
@@ -681,6 +711,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
   /* From Uiverse.io by vinodjangid07 */ 
 .button-exp {
     display: flex;
+    margin-left: 12px;
     align-items: center;
     justify-content: center;
     padding: 1px 12px;
@@ -749,6 +780,80 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
       transform: scale3d(1, 1, 1);
     }
   }
+
+
+
+
+
+
+  .tree {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: treeAnimate 5s linear infinite;
+  }
+  
+  @keyframes treeAnimate {
+    0% {
+      transform: rotateX(-20deg) rotateY(360deg);
+    }
+  
+    100% {
+      transform: rotateX(-20deg) rotateY(0deg);
+    }
+  }
+  
+  .tree div {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(25px * var(--x))) translateZ(0px);
+  }
+  
+  .tree div.branch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #69c069, #77dd77);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-bottom: 5px solid #00000019;
+    transform-origin: bottom;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(28.5px);
+  }
+  
+  .tree div.stem span {
+    position: absolute;
+    top: 110px;
+   /* updated top value */
+    left: calc(50% - 7.5px);
+    width: 15px;
+    height: 50%;
+    background: linear-gradient(90deg, #bb4622, #df7214);
+    border-bottom: 5px solid #00000019;
+    transform-origin: bottom;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(7.5px);
+  }
+  
+  .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    filter: blur(20px);
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-65px);
+  }
+  
+
   
   
   
