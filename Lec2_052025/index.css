@@ -435,7 +435,7 @@
     height: 91vh;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 6rem;
     overflow-x: hidden;
     /* background: rgb(0,0,0);
 background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgba(104,104,104,1) 100%, rgba(28,28,28,0.918732458803834) 100%); */
@@ -450,7 +450,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
 }
 
 .heading-container{
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     height: 10vh;
     display: flex;
     justify-content: center;
@@ -570,7 +570,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
     display: flex;
     flex-direction: row;
     gap: 5.5rem;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     justify-content: center;
     /* align-items: center; */
 }   
@@ -783,79 +783,102 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(75,75,75,1) 100%, rgb
 
 
 
+  
+
+  
+  
 
 
 
-  .tree {
-    position: relative;
+  /*SKILLS SECTION CSS*/
+  .skills-page{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red; */
+    padding-top: 5%;
+    /* border: 1px silver solid; */
+}
+
+
+
+/* Project cards */
+.skills-section {
+    /* border: 1px silver solid; */
+    text-align: left;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 5%;
+}
+
+
+
+.skills-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.skills-section p {
+    color: #c4c4c4;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    
+}
+
+.toggle-buttons button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 1rem;
+}
+
+.toggle-buttons button.active {
+    background: #111;
+    color: white;
+}
+
+/* Skills & Tools Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+/* Skill Cards */
+.skill-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card img {
     width: 50px;
     height: 50px;
-    transform-style: preserve-3d;
-    transform: rotateX(-20deg) rotateY(30deg);
-    animation: treeAnimate 5s linear infinite;
-  }
-  
-  @keyframes treeAnimate {
-    0% {
-      transform: rotateX(-20deg) rotateY(360deg);
-    }
-  
-    100% {
-      transform: rotateX(-20deg) rotateY(0deg);
-    }
-  }
-  
-  .tree div {
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transform: translateY(calc(25px * var(--x))) translateZ(0px);
-  }
-  
-  .tree div.branch span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #69c069, #77dd77);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    border-bottom: 5px solid #00000019;
-    transform-origin: bottom;
-    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(28.5px);
-  }
-  
-  .tree div.stem span {
-    position: absolute;
-    top: 110px;
-   /* updated top value */
-    left: calc(50% - 7.5px);
-    width: 15px;
-    height: 50%;
-    background: linear-gradient(90deg, #bb4622, #df7214);
-    border-bottom: 5px solid #00000019;
-    transform-origin: bottom;
-    transform: rotateY(calc(90deg * var(--i))) translateZ(7.5px);
-  }
-  
-  .shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    filter: blur(20px);
-    transform-style: preserve-3d;
-    transform: rotateX(90deg) translateZ(-65px);
-  }
-  
+}
 
-  
-  
+/* Hidden Section */
+.hidden {
+    display: none;
+}
   
 
 

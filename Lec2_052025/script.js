@@ -164,3 +164,29 @@ const textElement = document.getElementById("text");
 
         typeEffect();
 
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const skillsBtn = document.getElementById("skills-btn");
+            const toolsBtn = document.getElementById("tools-btn");
+            const skillsGrid = document.getElementById("skills-grid");
+            const toolsGrid = document.getElementById("tools-grid");
+
+            skillsBtn.addEventListener("click", function () {
+                skillsGrid.classList.remove("hidden");
+                toolsGrid.classList.add("hidden");
+                skillsBtn.classList.add("active");
+                toolsBtn.classList.remove("active");
+            });
+
+            toolsBtn.addEventListener("click", function () {
+                toolsGrid.classList.remove("hidden");
+                skillsGrid.classList.add("hidden");
+                toolsBtn.classList.add("active");
+                skillsBtn.classList.remove("active");
+            });
+        });
